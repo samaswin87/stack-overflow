@@ -6,13 +6,15 @@
 ```= button_tag "Cancel", :type => 'button'```
 
   * Then add this to your controller:
-  ```before_filter :check_for_cancel, :only => [:create, :update]
+  ```
+  before_filter :check_for_cancel, :only => [:create, :update]
 
-def check_for_cancel
-  if params[:commit] == "Cancel"
-    redirect_to my_page_path
+  def check_for_cancel
+    if params[:commit] == "Cancel"
+      redirect_to my_page_path
+    end
   end
-end```
+  ```
 
 
 
